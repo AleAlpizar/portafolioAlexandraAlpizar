@@ -14,4 +14,7 @@ public interface CategoriaService {
 
 // Se obtiene un listado de categorias en un List    
     public List<categoria> getCategorias(boolean activos); 
+    public categoria getCategoria(categoria categoria);
+    public void save(categoria categoria);
+    public void delete(categoria categoria);
 }
