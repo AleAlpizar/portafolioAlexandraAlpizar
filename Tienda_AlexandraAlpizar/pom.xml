@@ -17,7 +17,6 @@
         <java.version>19</java.version>
     </properties>
     <dependencies>
-    
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -80,7 +79,7 @@
             <groupId>com.google.firebase</groupId>
             <artifactId>firebase-admin</artifactId>
             <version>9.1.1</version>
-        </dependency>
+        </dependency> 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -89,8 +88,18 @@
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity6</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.main.bean-validator</groupId>
+            <artifactId>bean-validator</artifactId>
+            <version>5.1.0</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -107,5 +116,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
