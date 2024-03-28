@@ -6,14 +6,12 @@ package Tienda.demo.controller;
 
 import Tienda.demo.domain.Categoria;
 import Tienda.demo.service.CategoriaService;
+import Tienda.demo.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import Tienda.demo.service.ProductoService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/pruebas")
