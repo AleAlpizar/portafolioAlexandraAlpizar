@@ -47,10 +47,5 @@ public class UsuarioDetailsServiceImpl implements UsuarioDetailsService, UserDet
     }
     //Se devuelve User (clase de userDetails
     return new User(usuario.getUsername(), usuario.getPassword(), roles);
-    }
-
-
-
-
-    
+    }    
 }

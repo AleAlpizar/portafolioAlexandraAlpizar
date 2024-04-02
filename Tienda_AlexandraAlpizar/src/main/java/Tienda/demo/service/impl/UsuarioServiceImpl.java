@@ -60,22 +60,21 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioDao.existsByUsernameOrCorreo(username, correo);
     }
 
-  @Override
+    @Override
     @Transactional
     public void save(Usuario usuario, boolean crearRolUser) {
         usuario=usuarioDao.save(usuario);
         if (crearRolUser) {  //Si se está creando el usuario, se crea el rol por defecto "USER"
             Rol rol = new Rol();
             rol.setNombre("ROLE_USER");
-            
+            //rol.setIdUsuario(usuario.getIdUsuario());
             rolDao.save(rol);
         }
     }
-    
+
     @Override
     @Transactional
     public void delete(Usuario usuario) {
         usuarioDao.delete(usuario);
     }
 }
-
