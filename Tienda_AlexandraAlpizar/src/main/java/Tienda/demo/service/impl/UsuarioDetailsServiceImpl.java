@@ -33,7 +33,7 @@ public class UsuarioDetailsServiceImpl implements UsuarioDetailsService, UserDet
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
         //Buscar el usuario por el username en la tabla
-        Usuario usuario = usuarioDao.findByUsername(username);
+        Usuario usuario = (Usuario) usuarioDao.findByUsername(username);
         //Si no existe el usuaio lanza una excepcion
         if (usuario == null) {
             throw new UsernameNotFoundException(username);
@@ -47,5 +47,10 @@ public class UsuarioDetailsServiceImpl implements UsuarioDetailsService, UserDet
     }
     //Se devuelve User (clase de userDetails
     return new User(usuario.getUsername(), usuario.getPassword(), roles);
-    }    
+    }
+
+
+
+
+    
 }

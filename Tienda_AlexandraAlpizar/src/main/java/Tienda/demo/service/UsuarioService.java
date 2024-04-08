@@ -3,13 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package Tienda.demo.service;
+
 import Tienda.demo.domain.Usuario;
 import java.util.List;
-/**
- *
- * @author 11alp
- */
+
 public interface UsuarioService {
+    
     // Se obtiene un listado de usuarios en un List
     public List<Usuario> getUsuarios();
     
@@ -34,4 +33,5 @@ public interface UsuarioService {
     
     // Se elimina el usuario que tiene el id pasado por parámetro
     public void delete(Usuario usuario);
+    
 }

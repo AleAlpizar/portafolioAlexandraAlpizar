@@ -3,19 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package Tienda.demo.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 import Tienda.demo.dao.RolDao;
 import Tienda.demo.dao.UsuarioDao;
 import Tienda.demo.domain.Rol;
 import Tienda.demo.domain.Usuario;
 import Tienda.demo.service.UsuarioService;
-/**
- *
- * @author 11alp
- */
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
@@ -60,6 +57,15 @@ public class UsuarioServiceImpl implements UsuarioService {
         return usuarioDao.existsByUsernameOrCorreo(username, correo);
     }
 
+    
+ 
+
+    @Override
+    @Transactional
+    public void delete(Usuario usuario) {
+        usuarioDao.delete(usuario);
+    }
+
     @Override
     @Transactional
     public void save(Usuario usuario, boolean crearRolUser) {
@@ -67,14 +73,9 @@ public class UsuarioServiceImpl implements UsuarioService {
         if (crearRolUser) {  //Si se está creando el usuario, se crea el rol por defecto "USER"
             Rol rol = new Rol();
             rol.setNombre("ROLE_USER");
-            //rol.setIdUsuario(usuario.getIdUsuario());
+
+            rol.setIdUsuario(usuario.getIdUsuario().toString()); //Conversion Long to String
             rolDao.save(rol);
         }
     }
-
-    @Override
-    @Transactional
-    public void delete(Usuario usuario) {
-        usuarioDao.delete(usuario);
     }
-}

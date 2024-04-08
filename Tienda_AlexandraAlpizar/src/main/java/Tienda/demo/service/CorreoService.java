@@ -3,12 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package Tienda.demo.service;
-import jakarta.mail.MessagingException;
 
 /**
  *
  * @author 11alp
  */
+import jakarta.mail.MessagingException;
+
 public interface CorreoService {
     public void enviarCorreoHtml(
             String para, 
